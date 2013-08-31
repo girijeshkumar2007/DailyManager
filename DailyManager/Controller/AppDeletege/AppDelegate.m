@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "AddFileVC.h"
 
 @implementation AppDelegate
 
@@ -18,6 +19,11 @@
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
+    
+    AddFileVC *addFile=[[AddFileVC alloc]initWithNibName:@"AddFileVC" bundle:nil];
+    UINavigationController *navigation=[[UINavigationController alloc]initWithRootViewController:addFile];
+    self.window.rootViewController=navigation;
+    
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     return YES;
